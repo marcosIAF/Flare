@@ -1,7 +1,7 @@
 class APIModel {
   int count;
   String next;
-  Null previous;
+  String previous;
   List<Results> results;
   String seoTitle;
   String seoDescription;

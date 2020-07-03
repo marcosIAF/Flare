@@ -1,46 +1,32 @@
-import 'dart:io';
-
 import 'package:flare/models/api_model.dart';
-import 'package:flare/models/creator_model.dart';
-import 'package:flare/models/publisher_model.dart';
 import 'package:flare/services/api_call.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class HomeProvider with ChangeNotifier {
-  HomeProvider() {
+class MostProvider with ChangeNotifier {
+  MostProvider() {
     getData();
   }
-  APIModel apiModell;
+
+  APIModel mostapiModel;
+  APIModel apinext;
   APIResponse apiResponse;
-  CreatorModel creatorModel;
+  List<Results> res = [];
+  String nextPage;
+  List<Results> tempList = [];
 //  APIResponse apiResponse;
   bool isLoading = false;
   int page = 1;
+  bool visiblee = false;
   void getData() async {
     isLoading = true;
     notifyListeners();
-    apiModell = await APIResponse().fetchData(page);
-    print(apiModell);
+    mostapiModel = await APIResponse().fetchData(page);
+    print(mostapiModel);
 //    nextPage = await apiModell.next;
-//    tempList.addAll(apiModell.results);
-//    res.addAll(tempList);
-//    page++;
-    await getPublishers();
+    res.addAll(mostapiModel.results);
+    page++;
     isLoading = false;
-    notifyListeners();
-  }
-
-  void getPublishers() async {
-    isLoading = true;
-    notifyListeners();
-    creatorModel = await APIResponse().fetchCreator(page);
-    print(creatorModel);
-//    nextPage = await apiModell.next;
-//    tempList.addAll(apiModell.results);
-//    res.addAll(tempList);
-//    page++;
-//    isLoading = false;
     notifyListeners();
   }
 

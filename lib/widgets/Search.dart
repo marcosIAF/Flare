@@ -1,5 +1,6 @@
 import 'package:flare/services/api_call.dart';
 import 'package:flutter/material.dart';
+import 'package:flare/style/theme.dart' as Style;
 
 class Search extends StatefulWidget {
   @override
@@ -29,10 +30,11 @@ class _SearchState extends State<Search> {
 
   void show() {
     showModalBottomSheet(
+        backgroundColor: Style.Colors.mainColor,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(15), topRight: Radius.circular(15))),
-        isScrollControlled: true,
+//        isScrollControlled: true,
         context: context,
         builder: (context) {
           return Container(
@@ -126,12 +128,13 @@ class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Style.Colors.mainColor,
       body: SafeArea(
         child: Center(
           child: RaisedButton(
             child: Text('Click'),
             onPressed: () {
-//              show();
+              show();
 //              apiResponse.fetchData();
             },
           ),

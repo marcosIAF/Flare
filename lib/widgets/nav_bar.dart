@@ -1,6 +1,8 @@
 import 'package:ff_navigation_bar/ff_navigation_bar.dart';
 import 'package:flare/screens/About.dart';
 import 'package:flare/screens/Home_page.dart';
+import 'package:flare/screens/Movies.dart';
+import 'package:flare/screens/moviesScreen/Home_page.dart';
 import 'package:flutter/material.dart';
 
 import 'Search.dart';
@@ -35,8 +37,8 @@ class _NavBarState extends State<NavBar> {
             label: 'Games',
           ),
           FFNavigationBarItem(
-            iconData: Icons.search,
-            label: 'Search',
+            iconData: Icons.local_movies,
+            label: 'Movies',
           ),
           FFNavigationBarItem(
             iconData: Icons.info_outline,
@@ -55,7 +57,7 @@ Widget itemchanger(int value) {
       return HomePage();
       break;
     case 1:
-      return Search();
+      return MovieHome();
       break;
     case 2:
       return About();

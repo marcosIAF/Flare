@@ -5,3 +5,6 @@ final TextStyle titlestyle = ThemeData.dark().textTheme.title.copyWith(
       color: Colors.white,
       fontWeight: FontWeight.bold,
     );
+final fburl = 'https://facebook.com/marcosiaf07@gmail.com';
+final twitterurl = 'https://twitter.com/marcos_iaf';
+final linkedinurl = 'https://linkedin.com/in/rohity264';

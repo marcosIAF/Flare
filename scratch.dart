@@ -81,3 +81,49 @@ class HomeProvider with ChangeNotifier {
     notifyListeners();
   }
 }
+/*
+Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 2),
+                            child: Text(
+                              'Genres',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: viewModel.res[index].genres
+                                .map((gen) => Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 10.0),
+                                      child: FilterChip(
+                                          backgroundColor: Colors.amberAccent,
+                                          label: Text(gen.name),
+                                          onSelected: (b) {}),
+                                    ))
+                                .toList(),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 2),
+                            child: Text(
+                              '🏪Stores',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: viewModel.res[index].stores
+                                .map((store) => Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 10.0),
+                                      child: FilterChip(
+                                          backgroundColor: Colors.red,
+                                          label: Text(store.store.name),
+                                          onSelected: (b) {}),
+                                    ))
+                                .toList(),
+                          ),
+ */
